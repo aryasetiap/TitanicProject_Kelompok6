@@ -20,7 +20,13 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history. Th
 2. Run Project
 
 ### Custom Modify Kelompok 6 with form prediction :
-streamlit run Modify_Titanic_Prediction_Survived.py
+ ```sh
+    streamlit run Titanic_Prediction_Survived.py
+```
 
 ### Origial code : 
-streamlit run Titanic_Prediction_Survived.py
+ ```sh
+    streamlit run Titanic_Prediction_Survived.py
+```
+
+
