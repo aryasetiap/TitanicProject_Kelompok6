@@ -8,7 +8,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Function to load data
-@st.cache
+@st.cache_data
 def load_data():
     return pd.read_csv('train.csv')
 
@@ -113,6 +113,7 @@ def main():
     # Predict survival for a new passenger
     st.subheader('Predict Titanic Survival for a New Passenger')
     
+    name = st.text_input('Name')
     pclass = st.selectbox('Pclass', [1, 2, 3])
     sex = st.selectbox('Sex', ['male', 'female'])
     age = st.slider('Age', 0, 80, 30)
@@ -129,9 +130,9 @@ def main():
         prediction, prediction_proba = make_prediction(model, input_data)
         
         if prediction[0] == 1:
-            st.success(f'The passenger is likely to survive with a probability of {prediction_proba[0][1]:.2f}')
+            st.success(f'{name} is likely to survive with a probability of {prediction_proba[0][1]:.2f}')
         else:
-            st.error(f'The passenger is unlikely to survive with a probability of {prediction_proba[0][0]:.2f}')
+            st.error(f'{name} is unlikely to survive with a probability of {prediction_proba[0][0]:.2f}')
 
 if __name__ == '__main__':
     main()
